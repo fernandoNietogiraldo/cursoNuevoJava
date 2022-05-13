@@ -3,7 +3,7 @@ package org.indra.persistence;
 import org.indra.model.Usuario;
 import java.util.*;
 
-public class UsuarioRepositorio implements IUsuarioRepositorio{
+public class UsuarioRepositorioMock implements IUsuarioRepositorio{
 	
 	List<Usuario> usuarios = new ArrayList<Usuario>(){{
 		
@@ -36,6 +36,11 @@ public class UsuarioRepositorio implements IUsuarioRepositorio{
 	public void añadirUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Usuario> buscarTodos() {
+		return this.usuarios;
 	}
 
 }

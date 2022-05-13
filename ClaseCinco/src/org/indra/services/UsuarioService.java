@@ -3,7 +3,6 @@ package org.indra.services;
 import org.indra.dto.RegistroUsuarioDTO;
 import org.indra.model.Usuario;
 import org.indra.persistence.IUsuarioRepositorio;
-import org.indra.persistence.UsuarioRepositorio;
 
 public class UsuarioService {
 	

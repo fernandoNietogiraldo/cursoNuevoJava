@@ -1,7 +1,11 @@
 package org.indra.view;
 
+import java.util.List;
+
 import org.indra.dto.RegistroUsuarioDTO;
-import org.indra.persistence.UsuarioRepositorio;
+import org.indra.model.Usuario;
+import org.indra.persistence.IUsuarioRepositorio;
+import org.indra.persistence.UsuarioRepositorioDB;
 import org.indra.services.UsuarioService;
 
 public class Programa {
@@ -10,7 +14,15 @@ public class Programa {
 		
 		System.out.println("Bienvenidos a Indragram.");
 		
-		UsuarioRepositorio repositorio = new UsuarioRepositorio();
+		IUsuarioRepositorio repo = new UsuarioRepositorioDB();
+		List<Usuario> todos = repo.buscarTodos();
+		todos.forEach(usr -> System.out.println(usr.getNombre()));
+		
+		Usuario nuevo = new Usuario("Pedro");
+		
+		repo.añadirUsuario(nuevo);
+		
+		/*UsuarioRepositorio repositorio = new UsuarioRepositorio();
 		
 		UsuarioService usuarioService = new UsuarioService(repositorio);
 		
@@ -62,7 +74,9 @@ public class Programa {
 		}catch(Exception e) {
 			System.out.println("Debería dar un error de usuario vacío o muy corto");
 			System.out.println(e.getMessage());
-		}
+		}*/
+		
+		
 		
 		
 
