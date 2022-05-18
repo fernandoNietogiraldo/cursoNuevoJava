@@ -56,12 +56,12 @@ public class Programa {
 		Stream<Method> metodos = Arrays.stream(claseArrayList.getMethods());
 		metodos.forEach(m -> System.out.println(m.getName()));*/
 		
-		/*String cadena = new String("Hola que tal");
+		String cadena = new String("Hola que tal");
 		Class claseString = cadena.getClass();
 		Stream<Method> metodosString = Arrays.stream(claseString.getMethods());
 		Method metodoContains = metodosString.filter(m -> m.getName().equals("contains")).findFirst().get();
 		boolean contiene = (Boolean) metodoContains.invoke(cadena, "que");
-		System.out.println(contiene);*/
+		System.out.println(contiene);
 		
 		
 
